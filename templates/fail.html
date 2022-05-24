@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{%block titlee%}Fail{%endblock%}
+
+{%block content%}
+
+<h1>ALL Form Fields Required</h1>
+
+<form action="/form" method="POST">
+    <p>First Name</p>
+    <input name="FisrtName" type="text" value={{FirstName}}>
+    <p>Last Name</p>
+    <input name="LastName" type="text" value={{LastName}}>
+    <p>Email</p>
+    <input name="Email" type="email" value={{Email}}>
+    <p>Country</p>
+    <input name="Country" type="text" value={{Country}}>
+    <p>Phone</p>
+    <input name="Email" type="tel" value={{Tel}}>
+    <P>Password</P>
+    <input name="Password" type="password">
+    <div class="btn"><button>Submit</button></div>
+{%endblock%}

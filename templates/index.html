@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%block titlee%}Form{%endblock%}
+
+{%block content%}
+
+<body>
+    <form action="/form" method="POST">
+        <p>First Name</p>
+        <input name="FisrtName" type="text">
+        <p>Last Name</p>
+        <input name="LastName" type="text">
+        <p>Email</p>
+        <input name="Email" type="email">
+        <p>Country</p>
+        <input name="Country" type="text">
+        <p>Phone</p>
+        <input name="Email" type="tel">
+        <P>Password</P>
+        <input name="Password" type="password">
+        <div class="btn"><button>Submit</button></div>
+    </form>
+</body>
+
+{%endblock%}

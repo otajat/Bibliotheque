@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block titlee%}NewsLetter{%endblock%}
+{%block content%}
+
+<body>
+    <form action="/Thanks" method="post">
+        <label>Subcribe to my newsletter</label>
+        <input  name="email" type="email">
+        <div class="btn"><button>Subscribe</button></div>
+    </form>
+</body>
+
+{%endblock%}

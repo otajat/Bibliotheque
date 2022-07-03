@@ -3,7 +3,16 @@
 {%block content%}
 
 <body>
-    <h1> **** THANK_YOU ****</h1>
+    <h1> **** Book Added Succesfully ****</h1>
+
+    {% for i in BookList %}
+
+    <h4>
+      {{i.title}}
+    </h4>  
+
+    {% endfor %}
+
 </body>
 
 {%endblock%}

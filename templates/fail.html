@@ -5,19 +5,30 @@
 {%block content%}
 
 <h1>ALL Form Fields Required</h1>
+<br>
+<form action="Thanks" method="post">
+    <label>Author</label>
+    <br>
+    <input  name="Author" type="text">
+    <br>
+    <label>Title</label>
+    <br>
+    <input  name="Title" type="text">
+    <br>
+    <label>Quantity</label>
+    <br>
+    <input  name="Quantity" type="number">
+    <br>
+    <label>Price</label>
+    <br>
+    <input  name="Price" type="number">
+    <br>
+    <label>Description</label>
+    <br>
+    <input  name="Description" type="text">
+    <br>
+    <br>
+    <input type="submit" name="" value="Add Book" id="">
+</form>
 
-<form action="/form" method="POST">
-    <p>First Name</p>
-    <input name="FisrtName" type="text" value={{FirstName}}>
-    <p>Last Name</p>
-    <input name="LastName" type="text" value={{LastName}}>
-    <p>Email</p>
-    <input name="Email" type="email" value={{Email}}>
-    <p>Country</p>
-    <input name="Country" type="text" value={{Country}}>
-    <p>Phone</p>
-    <input name="Email" type="tel" value={{Tel}}>
-    <P>Password</P>
-    <input name="Password" type="password">
-    <div class="btn"><button>Submit</button></div>
 {%endblock%}

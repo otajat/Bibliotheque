@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%block titlee%}Rent a book{%endblock%}
+{%block content%}
+
+<body>
+    <form action="/book_{{id}}_rented_succesfully" method="POST">
+        <label>ClientCin</label>
+        <br>
+        <input  name="ClientCin" type="text">
+        <br>
+        <label>ClientName</label>
+        <br>
+        <input  name="ClientName" type="text">
+        <br>
+        <label>RentStart</label>
+        <br>
+        <input  name="RentStart" type="date">
+        <br>
+        <label>RentEnd</label>
+        <br>
+        <input  name="RentEnd" type="date">
+        <br>
+        <label>Numero de Chambre</label>
+        <br>
+        <input  name="NumeroChambre" type="number">
+        <br>
+        <br>
+        <input class="btn" type="submit" name="" value="Rent Book">
+    </form>
+</body>
+
+{%endblock%}

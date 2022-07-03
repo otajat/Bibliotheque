@@ -1,25 +1,63 @@
-{%extends 'base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rapport</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+</head>
 
-{%block titlee%}Form{%endblock%}
+<nav class="full">
+  <a class="link_a" href="/" onClick="ul(0)">Book list</a>
+  <a class="link_a" href="/addbook" onClick="ul(2)">Add a book</a>
+  <a class="link_a" href="/rapport" onClick="ul(2)">Rapport</a>
+</nav>
 
-{%block content%}
 
 <body>
-    <form action="/form" method="POST">
-        <p>First Name</p>
-        <input name="FisrtName" type="text">
-        <p>Last Name</p>
-        <input name="LastName" type="text">
-        <p>Email</p>
-        <input name="Email" type="email">
-        <p>Country</p>
-        <input name="Country" type="text">
-        <p>Phone</p>
-        <input name="Email" type="tel">
-        <P>Password</P>
-        <input name="Password" type="password">
-        <div class="btn"><button>Submit</button></div>
-    </form>
+    <table id="" class="display" class="tables" style="width:98%">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for book in booklist %}
+
+          <tr>
+            <td class="ID">{{ book.Id }}</td>
+            <td class="Title">{{book.title}}</td>
+            <td class="Author">{{book.author}}</td>
+            <td class="Quantity">{{book.quantity}}</td>
+            <td class="Price">{{book.price}}</td>
+            <td class="Description">{{book.description}}</td>
+            <td><button class="btn" id="delbut" onclick="window.location.href='/delete/{{book.Id}}'" id="btn btn-danger">Delete</button></td>
+            <td><button class="btn" id="modbut" onclick="window.location.href='/modify/{{book.Id}}'">Update</button></td>
+            <td><button class="btn" id="rentbut" onclick="window.location.href='/rent/{{book.Id}}'">rent</button></td>
+            </td>
+          </tr>
+      
+        {% endfor %}
+        </tbody>
+    </table>
+    <script src="/static/script.js"></script>
+    <script src="/jquery/jquery-3.6.0.js"></script>
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
 </body>
 
-{%endblock%}

@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{% block title %}Add Book{% endblock %}
+{% block content %}
+<body>
+    <form action="Thanks" method="post">
+        <label>Author</label>
+        <br>
+        <input  name="Author" type="text">
+        <br>
+        <label>Title</label>
+        <br>
+        <input  name="Title" type="text">
+        <br>
+        <label>Quantity</label>
+        <br>
+        <input  name="Quantity" type="number" min="1">
+        <br>
+        <label>Price</label>
+        <br>
+        <input  name="Price" type="number" min="1" step="0.01">
+        <br>
+        <label>Description</label>
+        <br>
+        <input  name="Description" type="text">
+        <br>
+        <br>
+        <input class="btn" type="submit" name="" value="Add Book" id="">
+    </form>
+</body>
+{% endblock %}

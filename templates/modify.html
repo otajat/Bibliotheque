@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{% block title %} Modify Book {% endblock %}
+{% block content %}
+<body>
+    <form action="/book_{{id}}_updated_succesfully" method="POST">
+        <label>Author</label>
+        <br>
+        <input  name="Author" type="text" value="{{book_to_modify.author}}">
+        <br>
+        <label>Title</label>
+        <br>
+        <input  name="Title" type="text" value="{{book_to_modify.title}}">
+        <br>
+        <label>Quantity</label>
+        <br>
+        <input  name="Quantity" type="number" value="{{book_to_modify.quantity}}">
+        <br>
+        <label>Price</label>
+        <br>
+        <input  name="Price" type="number" value="{{book_to_modify.price}}" min="1" step="0.01">
+        <br>
+        <label>Description</label>
+        <br>
+        <input  name="Description" type="text" value="{{book_to_modify.description}}">
+        <br>
+        <br>
+        <input class="btn" type="submit" name="" value="Update Book">
+    </form>
+</body>
+{% endblock %}

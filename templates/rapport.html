@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rapport</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+</head>
+
+
+<nav class="full">
+  <a class="link_a" href="/" onClick="ul(0)">Book list</a>
+  <a class="link_a" href="/addbook" onClick="ul(2)">Add a book</a>
+  <a class="link_a" href="/rapport" onClick="ul(2)">Rapport</a>
+</nav>
+
+
+
+<body>
+  <table cellspacing="5" cellpadding="5">
+    <tbody><tr>
+        <td>Minimum date:</td>
+        <td><input type="text" id="min" name="min"></td>
+    </tr>
+    <tr>
+        <td>Maximum date:</td>
+        <td><input type="text" id="max" name="max"></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table id="tblCustomer" class="display" class="display nowrap" style="width: 100%;">
+    <thead>
+      <tr>
+        <th scope="col">Rent Id</th>
+        <th scope="col">Rent Start</th>
+        <th scope="col">Rent End</th>
+        <th scope="col">Client Name</th>
+        <th scope="col">Client Cin</th>
+        <th scope="col">Numero de chambre</th>
+        <th scope="col">Book Id</th>
+        <th scope="col">Book Title</th>
+    </thead>
+    <tbody>
+        {% for rent in rapport %}
+          <tr>
+            <td class="rentId">{{ rent.Id }}</td>
+            <td class="RentStart">{{rent.RentStart}}</td>
+            <td class="RentEnd">{{rent.RentEnd}}</td>
+            <td class="ClientName">{{rent.ClientName}}</td>
+            <td class="Price">{{rent.ClientCin}}</td>
+            <td class="NumeroChambre">{{rent.NumeroChambre}}</td>
+            <td class="bookId">{{rent.bookId}}</td>
+            <td class="bookTiltle">{{rent.bookTiltle}}</td>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <button class="btn" onclick="exportData()">
+      <span class="glyphicon glyphicon-download"></span>
+      Download list
+  </button>
+
+  <script src="/static/script.js"></script>
+  <script src="/jquery/jquery-3.6.0.js"></script>
+  <script src="/jquery/jquery-3.6.0.min.js"></script>
+
+</body>
+
